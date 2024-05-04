@@ -1,0 +1,64 @@
+#[sg.Text("f1 = 4/x-2*x")],
+#[sg.Text("f2 = x ** 3 - 2 * x ** 2 - 19 * x - 20")],
+#[sg.Text("f3 = -4/x+2/x")],
+#[sg.Text("Введите номер функции"), sg.Input(key="-function-")],
+
+
+
+
+#if f < 0 or f > 3:
+            #window["-ERROR-"].Update("Неверный выбор функции")
+            #continue
+
+
+#layout = [[sg.Text('Выберите функцию для построения графика:', font=('Arial Bold', 14))],
+          #[sg.Combo(list(functions.keys()), key='function', readonly=True, text_color='black', font=('Arial Bold', 14))],
+          #[sg.Text("Введите а", font=('Arial Bold', 14)), sg.Input("1", key="-A-", font=('Arial Bold', 14))],
+          #[sg.Text("Введите b", font=('Arial Bold', 14)), sg.Input("7", key="-B-", font=('Arial Bold', 14))],
+          #[sg.Text("Введите e", font=('Arial Bold', 14)), sg.Input("0.001", key="-E-", font=('Arial Bold', 14))],
+          #[sg.Text(key="-ERROR-")],
+          #[sg.Canvas(key="-CANVAS-")],
+          #[sg.Text(key="-Result-")],
+          #[sg.Button("Вычисление первого шага:", key="-FirstStep-", font=('Arial Bold', 14)), sg.Button("Вычисление второго шага:", key="-SecondStep-", visible=False,  font=('Arial Bold', 14)),
+          # sg.Button("Комбинированный метод ответ", key="-Answer-", visible=False, font=('Arial Bold', 14))]
+#         ]
+
+
+
+
+#layout1 = [
+#    [sg.Column([
+#       [sg.Text('Выберите функцию:', font=('Arial Bold', 14)),sg.Combo(list(functions.keys()), key='function', readonly=True, text_color='black', font=('Arial Bold', 14), size=(50, 0), enable_events=True)],
+#        [sg.Text("Введите а", font=('Arial Bold', 14)), sg.Input(key="-A-", font=('Arial Bold', 14), enable_events=True)],
+#        [sg.Text("Введите b", font=('Arial Bold', 14)), sg.Input(key="-B-", font=('Arial Bold', 14), enable_events=True)],
+#       [sg.Text("Введите e", font=('Arial Bold', 14)), sg.Input(key="-E-", font=('Arial Bold', 14), enable_events=True)],
+#       [sg.Text(key="-ERROR-")],
+#        [sg.Text(key="-Result-")],
+#       [sg.Text(key='-Result1-')],
+#        [sg.Button("Вычисление первого шага:", key="-FirstStep-", font=('Arial Bold', 14))],
+#        [sg.Button("Вычисление второго шага:", key="-SecondStep-", visible=False,  font=('Arial Bold', 14))],
+#        [sg.Button("Комбинированный метод ответ", key="-Answer-", visible=False, font=('Arial Bold', 14))]
+#    ], element_justification='right'),
+#   sg.Column([
+ #       [sg.Canvas(key="-CANVAS-")]
+ #   ], element_justification='left')]
+#]
+
+
+
+#if f(a)*derivative_second(f, a) < 0: #Условие начальной точки для метода хорд
+            #a = a - (((a-b1) * f(a))/(f(a)-f(b1)))#формулы расчета по методу хорд
+            #Dot_hord.append(a)
+            #print("Xord", a)
+        #elif f(a)*derivative_second(f, a) > 0:
+            #a = a-f(a)/derivative_first(f, a)
+            #print("Newton", a)
+            #Dot_newton.append(a)
+        #if f(b) * derivative_second(f, b) < 0:
+            #b = b - ((b-a1) * f(b)) / (f(b) - f(a1))
+           # print("Xord", b)
+           # Dot_hord.append(b)
+       # elif f(b) * derivative_second(f, b) > 0:#Условие начальной точки для метода касательных
+           # b = b - f(b)/derivative_first(f, b) #Формулы расчета по методу касательных
+            #print("Newton", b)
+            #Dot_newton.append(b)
